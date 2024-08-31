@@ -2,6 +2,7 @@
 
 #define XKB_SUPPORT 1
 #define X11_CLIPBOARD 1
+#define SCROLLBACK 10000
 
 /*
  * appearance
