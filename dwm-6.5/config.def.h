@@ -17,15 +17,15 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=9" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=9";
-static const char col_gray[]        = "#9eacad";
-static const char col_base[]        = "#00141a";
-static const char col_gray3[]       = "#eee8d5";
-static const char col_gray4[]       = "#fdf6e3";
-static const char col_green[]       = "#859900";
+static const char col_gray1[]       = "#000000";
+static const char col_gray2[]       = "#444444";
+static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray4[]       = "#eeeeee";
+static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray,  col_base, col_base },
-	[SchemeSel]  = { col_green, col_base, col_base  },
+	[SchemeNorm] = { col_gray3,  col_gray1, col_gray2 },
+	[SchemeSel]  = { col_cyan,   col_gray1, col_cyan },
 };
 
 /* tagging */
