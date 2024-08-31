@@ -40,6 +40,7 @@
 #include <X11/extensions/Xinerama.h>
 #endif /* XINERAMA */
 #include <X11/Xft/Xft.h>
+#include <X11/Xlib.h>
 
 #include "drw.h"
 #include "util.h"
@@ -1168,6 +1169,7 @@ manage(Window w, XWindowAttributes *wa)
 	Client *c, *t = NULL;
 	Window trans = None;
 	XWindowChanges wc;
+  char *name = NULL; // Declare the name variable
 
 	c = ecalloc(1, sizeof(Client));
 	c->win = w;
@@ -1186,6 +1188,17 @@ manage(Window w, XWindowAttributes *wa)
 		c->mon = selmon;
 		applyrules(c);
 	}
+
+  // Fetch the window name
+  if (XFetchName(dpy, w, &name) > 0) { // Check if the name was fetched successfully
+      // Check if the window is the PIP window
+      if (strstr(name, "Picture-in-Picture") != NULL) {
+          c->isfloating = 1; // Make it floating
+          c->bw = 0; // Optional: remove border
+          XRaiseWindow(dpy, c->win); // Raise the window to the top
+      }
+      XFree(name); // Free the name after use
+  }
 
 	if (c->x + WIDTH(c) > c->mon->wx + c->mon->ww)
 		c->x = c->mon->wx + c->mon->ww - WIDTH(c);
