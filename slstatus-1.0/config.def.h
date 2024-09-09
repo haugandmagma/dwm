@@ -66,11 +66,11 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function           format                         nt */
   { run_command,        "%s  ",                        "/home/muhamad/.scripts/spotify", NULL },
-  { keymap,             "^c#586e75^  %s^d^  ",        NULL },
+  { keymap,             "^c#444444^  %s^d^  ",        NULL },
   { run_command,        "%s  ",                        "/home/muhamad/.scripts/brightness", NULL },
   { run_command,        "%s ",                         "/home/muhamad/.scripts/mic status", NULL },
   { run_command,        "%s  ",                        "/home/muhamad/.scripts/volume", NULL },
 	{ run_command,        "%s  ",                        "/home/muhamad/.scripts/battery", NULL },
   { run_command,        "%s  ",                        "/home/muhamad/.scripts/network", NULL },
-	{ datetime,           "  %s ",                      "^c#586e75^%d-%m-%Y^d^ %H:%M" },
+	{ datetime,           "  %s ",                      "^c#444444^%d-%m-%Y^d^ %H:%M" },
 };
